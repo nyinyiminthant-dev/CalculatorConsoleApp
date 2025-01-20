@@ -9,7 +9,20 @@ int i = 1;
 
 void Round()
 {
-    Console.WriteLine("Do you want to sart again?");
+    Console.WriteLine("Do you want to sart again? (y) or (n) ");
+    string round = Console.ReadLine()!;
+    
+    if(round is "Y" || round is "y")
+    {
+
+        Console.WriteLine("Welcome To Console Calculator App Again.");
+        Console.WriteLine("____________________________________");
+        i++;
+    }
+    else if (round is "N" || round is "n")
+    {
+        Console.WriteLine("Thanks For Using");
+    }
 }
 
 while (i == 1 || i > 0)
@@ -37,11 +50,12 @@ while (i == 1 || i > 0)
     if (save is "Y" || save is "y")
     {
         ef.AddResult();
+        Round();
         
     }
     else if (save is "N" || save is "n")
     {
-        Console.WriteLine("Thanks For Using");
+        Round();
     }
     #endregion
 }
